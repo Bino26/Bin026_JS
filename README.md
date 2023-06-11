@@ -1,2 +1,2 @@
 # Bin026_JS
-It contains my practice projects in JavaScript . It can be also used for a portfolio
+It contains my practice projects in Vanilla JS . It can be also used for a portfolio
