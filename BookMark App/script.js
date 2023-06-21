@@ -98,6 +98,19 @@ const fetchBookmarks = () => {
   buildBookmarks();
 };
 
+// Delete Bookmark
+const deleteBookmark = (url) => {
+  bookmarks.forEach((bookmark, i) => {
+    if (bookmark.url === url) {
+      bookmarks.splice(i, 1);
+    }
+  });
+
+  // update bookmarks in localStorage, repopulate the DOM
+  localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  fetchBookmarks();
+};
+
 //Handle Data from Form
 
 const storeBookmark = (e) => {
