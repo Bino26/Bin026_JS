@@ -43,6 +43,9 @@ function validate(nameValue, urlValue) {
 
 // Build Bookmarks DOM
 const buildBookmarks = () => {
+  // Clear the container
+  bookmarksContainer.textContent = "";
+
   bookmarks.forEach((bookmark) => {
     const { name, url } = bookmark;
     // Build Item
