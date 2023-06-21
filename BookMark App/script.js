@@ -6,6 +6,8 @@ const websiteNameEl = document.querySelector("#website-name");
 const websiteUrlEl = document.querySelector("#website-url");
 const bookmarksContainer = document.querySelector("#bookmarks-container");
 
+let bookmarks = [];
+
 // Show Moadl , Focus on Input
 
 const showModal = () => {
@@ -49,10 +51,18 @@ const storeBookmark = (e) => {
     urlValue = `https://${urlValue}`;
   }
 
-  console.log(nameValue, urlValue);
   if (!validate(nameValue, urlValue)) {
     return false;
   }
+  const bookmark = {
+    name: nameValue,
+    url: urlValue,
+  };
+  bookmarks.push(bookmark);
+  console.log(bookmarks);
+  localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  bookmarkForm.reset();
+  websiteNameEl.focus();
 };
 
 //Event Listener
