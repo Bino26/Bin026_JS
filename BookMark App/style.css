@@ -103,6 +103,10 @@ h1:hover {
   width: 500px;
   animation: modalOpen 1s;
 }
+.footerzone {
+  margin-top: 26em;
+  text-align: center;
+}
 
 @keyframes modalOpen {
   from {
@@ -179,5 +183,9 @@ button:focus {
 @media screen and (max-width: 600px) {
   .container {
     flex-flow: column nowrap;
+  }
+  .footerzone {
+    margin-top: 23em;
+    font-size: 15px;
   }
 }
