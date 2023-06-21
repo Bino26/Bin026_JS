@@ -41,6 +41,15 @@ function validate(nameValue, urlValue) {
   return true;
 }
 
+//Fetch BookMarks from LocalStorage
+
+const fetchBookMarks = () => {
+  // Get them if available
+  if (localStorage.getItem("bookmarks")) {
+    bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+  }
+};
+
 //Handle Data from Form
 
 const storeBookmark = (e) => {
@@ -61,9 +70,13 @@ const storeBookmark = (e) => {
   bookmarks.push(bookmark);
   console.log(bookmarks);
   localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  fetchBookmarks();
   bookmarkForm.reset();
   websiteNameEl.focus();
 };
 
 //Event Listener
 bookmarkForm.addEventListener("submit", storeBookmark);
+
+// On Load
+fetchBookmarks();
