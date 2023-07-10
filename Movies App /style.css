@@ -47,6 +47,7 @@ p {
 main {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .movie {
@@ -91,4 +92,33 @@ main {
 }
 .movie-info span.red {
   color: rgb(189, 42, 42);
+}
+.overview {
+  background-color: #fff;
+  padding: 2rem;
+  position: absolute;
+  max-height: 100%;
+  overflow: auto;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+#titleApp {
+  position: absolute;
+  top: -1.5%;
+  left: 5%;
+}
+
+@media (max-width: 400px) {
+  #titleApp {
+    font-size: 1.2rem;
+    top: 1.3%;
+  }
 }

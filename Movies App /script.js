@@ -8,7 +8,7 @@ const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
-//initially get fav moviea
+//initially get fav movie
 getMovies(APIURL);
 
 async function getMovies(url) {
@@ -29,6 +29,7 @@ function showMovies(movies) {
 
     movieEl.innerHTML = `
     
+    
         <img
           src="${IMGPATH + poster_path}"
           alt="${title}"
@@ -47,7 +48,7 @@ function showMovies(movies) {
     main.appendChild(movieEl);
   });
 }
-
+// style the rate of the movie
 function getClassByRate(vote) {
   if (vote >= 8) {
     return "green";
@@ -57,15 +58,17 @@ function getClassByRate(vote) {
     return "red";
   }
 }
+//Form Submit
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const searchTerm = search.value;
   const query = document.getElementById("query");
-
+  // response with the value of Search
   if (searchTerm) {
     query.textContent = searchTerm;
+    main.innerHTML += `<p>Results for : <span id="query"></span></p>`;
     getMovies(SEARCHAPI + searchTerm);
 
     search.value = "";
