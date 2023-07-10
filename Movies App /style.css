@@ -16,6 +16,14 @@ header {
   justify-content: flex-end;
   padding: 1rem;
 }
+p {
+  font-size: 2rem;
+  color: #7378c5;
+  text-align: center;
+}
+#query {
+  color: #eee;
+}
 
 .search {
   background-color: transparent;
