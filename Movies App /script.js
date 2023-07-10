@@ -68,7 +68,6 @@ form.addEventListener("submit", (e) => {
   // response with the value of Search
   if (searchTerm) {
     query.textContent = searchTerm;
-    main.innerHTML += `<p>Results for : <span id="query"></span></p>`;
     getMovies(SEARCHAPI + searchTerm);
 
     search.value = "";
