@@ -24,6 +24,11 @@ function createUserCard(user) {
                 </ul>
 
                 <div id="repos"></div>
+                <div id="chart-api">
+                <p>${user.login} Contributions this year</p>
+                <img class ="img-chart"src="https://ghchart.rshah.org/${user.login}" alt="chart-contributions">
+
+                </div>
             </div>
         </div>
     `;
